@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Monterchistory</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap" rel="stylesheet">
+<style>
+/* =====================
+   GLOBAL STYLES
+===================== */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background: #0b0b0b;
+  color: #f5f5f5;
+  overflow-x: hidden;
+}
+body { display: flex; flex-direction: column; }
+a { color: #f5f5f5; text-decoration: none; }
+
+/* =====================
+   HOMEPAGE STYLES
+===================== */
+.home {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.sovra-logo { letter-spacing: 0.4em; text-transform: uppercase; font-size: 1rem; margin-bottom: 20px; color: #9a9a9a; }
+.logo { width: 250px; height: 250px; margin-bottom: 40px; }
+.links { display: flex; flex-direction: column; gap: 15px; align-items: center; }
+.links a, .links span { font-size: 3rem; display: inline-flex; align-items: center; font-family: 'Lora', serif; }
+.white{color:#fff}
+.red{color:#c00000}
+.green{color:#2ecc71}
+.shaded { opacity: 0.6; }
+.brand{white-space:nowrap}
+
+/* =====================
+   HOVER EFFECT HOMEPAGE TITLES
+===================== */
+.home .links a span.brand,
+.home .links span.brand {
+  transition: transform 0.25s ease;
+}
+.home .links a span.brand:hover,
+.home .links span.brand:hover {
+  transform: scale(1.05);
+}
+
+/* =====================
+   PAGE STYLES (MISSIONE, GALLERIA, CONTATTI)
+===================== */
+.page { min-height: 100vh; padding: 80px 10vw; display: none; }
+.supertitle { text-transform: uppercase; letter-spacing: 0.3em; font-size: 0.7rem; color: #9a9a9a; margin-bottom: 20px; font-family: 'Helvetica Neue', Arial, sans-serif; }
+.title { display: flex; align-items: center; gap: 15px; font-size: 2.5rem; font-weight: 700; cursor: pointer; font-family: 'Lora', serif; }
+.title img { width: 50px; height: 50px; }
+.nav { margin: 30px 0; display: flex; gap: 20px; font-family: 'Helvetica Neue', Arial, sans-serif; }
+.nav a.active { border-bottom: 2px solid #f5f5f5; }
+.content { max-width: 700px; line-height: 1.6; color: #e0e0e0; font-family: 'Helvetica Neue', Arial, sans-serif; }
+
+/* =====================
+   GALLERY STYLES
+===================== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  width: 100%;
+  justify-items: center;
+  margin-top: 2rem;
+}
+.gallery img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform .25s;
+}
+.gallery img:hover { transform: scale(1.05); }
+
+/* =====================
+   CONTACT LINK STYLES
+===================== */
+.contact-link {
+  color: #0000EE; /* classico blu dei link */
+  text-decoration: underline;
+}
+
+/* =====================
+   LIGHTBOX STYLES
+===================== */
+.lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.9); display: none; flex-direction: column; align-items: center; justify-content: center; z-index: 10; }
+.lightbox img { max-width: 80%; max-height: 60vh; }
+.lightbox .desc { margin-top: 20px; color: #f5f5f5; font-family: 'Helvetica Neue', Arial, sans-serif; }
+.close { position: absolute; top: 30px; right: 40px; font-size: 2rem; cursor: pointer; }
+.arrow { position: absolute; top: 50%; font-size: 3rem; cursor: pointer; user-select: none; }
+.arrow.left { left: 40px; }
+.arrow.right { right: 40px; }
+</style>
+</head>
+<body oncontextmenu="return false;">
+
+<!-- =====================
+     HOMEPAGE SECTION
+===================== -->
+<section class="home" id="home">
+  <div class="sovra-logo">Raccogliere, custodire, raccontare</div>
+  <img class="logo" src="img/logo/logo-monterchistory.png" alt="Monterchistory logo">
+  <div class="links">
+    <a href="#" onclick="event.preventDefault(); openPage('missione');"><span class="brand"><span class="white">Monterc</span><span class="red">History</span></span></a>
+    <span class="brand shaded"><span class="white">Monterchi</span><span class="green">Story</span> &nbsp;· in arrivo</span>
+  </div>
+</section>
+
+<!-- =====================
+     MISSION PAGE
+===================== -->
+<section class="page" id="missione">
+  <div class="supertitle">Dalle radici al presente</div>
+  <div class="title" onclick="openPage('home')"><img src="img/logo/logo-monterchistory.png" alt="Monterchistory logo piccolo"><span class="brand"><span class="white">Monterc</span><span class="red">History</span></span></div>
+  <div class="nav">
+    <a class="active">Missione</a>
+    <a href="#" onclick="openPage('galleria')">Galleria</a>
+    <a href="#" onclick="openPage('contatti')">Contatti</a>
+  </div>
+  <div class="content">
+    Il progetto MontercHistory nasce con l’obiettivo di recuperare e conservare la memoria storica di Monterchi.
+    <br><br>
+    Attraverso la raccolta di testimonianze, fotografie, documenti e ricostruzioni storiche, il progetto preserva 
+    l’identità e le tradizioni del paese, rendendola fruibile e accessibile alle generazioni presenti e future.
+  </div>
+</section>
+
+<!-- =====================
+     GALLERY PAGE
+===================== -->
+<section class="page" id="galleria">
+  <div class="supertitle">Dalle radici al presente</div>
+  <div class="title" onclick="openPage('home')"><img src="img/logo/logo-monterchistory.png" alt="Monterchistory logo piccolo"><span class="brand"><span class="white">Monterc</span><span class="red">History</span></span></div>
+  <div class="nav">
+    <a href="#" onclick="openPage('missione')">Missione</a>
+    <a class="active">Galleria</a>
+    <a href="#" onclick="openPage('contatti')">Contatti</a>
+  </div>
+  <div class="gallery" id="galleryContainer"></div>
+</section>
+
+<!-- =====================
+     CONTACTS PAGE
+===================== -->
+<section class="page" id="contatti">
+  <div class="supertitle">Dalle radici al presente</div>
+  <div class="title" onclick="openPage('home')"><img src="img/logo/logo-monterchistory.png" alt="Monterchistory logo piccolo"><span class="brand"><span class="white">Monterc</span><span class="red">History</span></span></div>
+  <div class="nav">
+    <a href="#" onclick="openPage('missione')">Missione</a>
+    <a href="#" onclick="openPage('galleria')">Galleria</a>
+    <a class="active">Contatti</a>
+  </div>
+  <div class="content">
+  <p>Se vuoi metterti in contatto o hai materiale fotografico, video o documenti riguardanti Monterchi, contattaci:</p>
+  <p>Email: <a href="mailto:info@monterchistory.it" class="contact-link">info@monterchistory.it</a></p>
+  <p>Facebook: <a href="https://www.facebook.com/Monterchistory.it" target="_blank" class="contact-link">facebook.com/monterchistory.it</a></p>
+  <p>Instagram: <a href="https://www.instagram.com/monterchistory" target="_blank" class="contact-link">instagram.com/monterchistory</a></p>
+  </div>
+</section>
+
+<!-- =====================
+     LIGHTBOX SECTION
+===================== -->
+<div class="lightbox" id="lightbox">
+  <div class="close" onclick="closeLightbox()">✕</div>
+  <div class="arrow left" onclick="prevImg()">‹</div>
+  <img id="lightImg" src="">
+  <div class="arrow right" onclick="nextImg()">›</div>
+  <div class="desc" id="lightDesc"></div>
+</div>
+
+<!-- =====================
+     SCRIPT SECTION
+===================== -->
+<script>
+const pages = ['missione','galleria','contatti'];
+function openPage(id){
+  document.getElementById('home').style.display = (id === 'home') ? 'flex' : 'none';
+  pages.forEach(p=>{
+    const el = document.getElementById(p);
+    if(el) el.style.display = (p === id) ? 'block' : 'none';
+  });
+  document.getElementById('lightbox').style.display='none';
+}
+
+const galleryImages = [
+  {src:'https://picsum.photos/400/300?1', desc:'Descrizione immagine 1'},
+  {src:'https://picsum.photos/400/300?2', desc:'Descrizione immagine 2'},
+  {src:'https://picsum.photos/400/300?3', desc:'Descrizione immagine 3'}
+];
+
+const galleryContainer = document.getElementById('galleryContainer');
+galleryImages.forEach((img, index) => {
+  const imageElem = document.createElement('img');
+  imageElem.src = img.src;
+  imageElem.onclick = () => openLightbox(index);
+  galleryContainer.appendChild(imageElem);
+});
+
+let current = 0;
+function openLightbox(i){ current=i; document.getElementById('lightImg').src=galleryImages[i].src; document.getElementById('lightDesc').innerText=galleryImages[i].desc; document.getElementById('lightbox').style.display='flex'; }
+function closeLightbox(){ document.getElementById('lightbox').style.display='none'; }
+function nextImg(){ current=(current+1)%galleryImages.length; openLightbox(current); }
+function prevImg(){ current=(current-1+galleryImages.length)%galleryImages.length; openLightbox(current); }
+document.addEventListener('dragstart', e=>e.preventDefault());
+</script>
+</body>
+</html>
