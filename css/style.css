@@ -1,0 +1,246 @@
+/* =====================
+   RESET & BASE
+===================== */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background: #0b0b0b;
+  color: #f5f5f5;
+  overflow-x: hidden;
+}
+
+a {
+  color: #f5f5f5;
+  text-decoration: none;
+}
+
+/* disabilita selezione e menu */
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* =====================
+   HOME
+===================== */
+.home {
+  height: 100vh;
+  padding: 40px 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.sovra-logo {
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #9a9a9a;
+}
+
+.logo {
+  width: 250px;
+  height: 250px;
+  margin-bottom: 40px;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.links a,
+.links span {
+  font-size: 3rem;
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Lora', serif;
+}
+
+/* hover effetto titolo */
+.links a .brand {
+  display: inline-flex;
+  transition: transform 0.25s ease;
+}
+
+.links a:hover .brand {
+  transform: scale(1.05);
+}
+
+
+.shaded {
+  opacity: 0.6;
+}
+
+/* =====================
+   COLORI BRAND
+===================== */
+.white { color: #ffffff; }
+.red { color: #8d0000ff; }
+.green { color: #00661eff; }
+
+/* =====================
+   PAGINE INTERNE
+===================== */
+.page {
+  min-height: 100vh;
+  padding: 80px 10vw;
+}
+
+.supertitle {
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: #9a9a9a;
+  margin-bottom: 20px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 0; /* NESSUNO spazio MontercHistory */
+  font-size: 2.5rem;
+  font-family: 'Lora', serif;
+}
+
+.title img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.nav {
+  margin: 30px 0;
+  display: flex;
+  gap: 20px;
+}
+
+.nav a.active {
+  border-bottom: 2px solid #f5f5f5;
+}
+
+.content {
+  max-width: 700px;
+  line-height: 1.6;
+  color: #e0e0e0;
+}
+
+/* =====================
+   GALLERIA
+===================== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  margin-top: 2rem;
+}
+
+.gallery img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+.lightbox { 
+  position: fixed; 
+  inset: 0; 
+  background: rgba(0,0,0,0.9); 
+  display: none; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  z-index: 10; 
+}
+
+.lightbox img { 
+  max-width: 80%; 
+  max-height: 60vh; 
+}
+
+.lightbox .desc { 
+  margin-top: 20px; 
+  color: #f5f5f5; 
+  font-family: 'Helvetica Neue', Arial, sans-serif; 
+  text-align: center;
+}
+
+.close { 
+  position: absolute; 
+  top: 30px; 
+  right: 40px; 
+  font-size: 2rem; 
+  cursor: pointer; 
+}
+
+.arrow { 
+  position: absolute; 
+  top: 50%; 
+  font-size: 3rem; 
+  cursor: pointer; 
+  user-select: none; 
+  color: #8d0000ff;
+}
+
+.arrow.left { left: 40px; }
+.arrow.right { right: 40px; }
+
+/* =====================
+   CONTATTI
+===================== */
+
+.contact-link {
+  color: #0000EE;  /* blu classico */
+  text-decoration: underline;
+}
+
+.contact-link:hover {
+  opacity: 0.8;  /* leggero effetto hover */
+}
+
+
+/* =====================
+   MOBILE
+===================== */
+@media (max-width: 768px) {
+  .logo {
+    width: 160px;
+    height: 160px;
+  }
+
+  .links a,
+  .links span {
+    font-size: 1.8rem;
+  }
+
+  .page {
+    padding: 60px 6vw;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  .gallery img {
+    height: 100px;
+  }
+}
