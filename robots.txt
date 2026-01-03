@@ -2,9 +2,9 @@
 
 User-agent: *
 # Blocca solo contenuti non pubblici o di sviluppo
-Disallow: /css/dev/
-Disallow: /js/dev/
-Disallow: /img/backup/
+Disallow: /css/
+Disallow: /js/
+Disallow: /img/
 Disallow: /tmp/
 Disallow: /drafts/
 
@@ -13,3 +13,4 @@ Allow: /
 
 # Sitemap del sito
 Sitemap: https://monterchistory.it/sitemap.xml
+
