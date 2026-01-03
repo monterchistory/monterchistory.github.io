@@ -1,0 +1,15 @@
+# Blocca cartelle sensibili e di sviluppo, lascia indicizzabili le pagine principali e le immagini della galleria
+
+User-agent: *
+# Blocca solo contenuti non pubblici o di sviluppo
+Disallow: /css/dev/
+Disallow: /js/dev/
+Disallow: /img/backup/
+Disallow: /tmp/
+Disallow: /drafts/
+
+# Permetti tutte le altre pagine principali e immagini
+Allow: /
+
+# Sitemap del sito
+Sitemap: https://monterchistory.it/sitemap.xml
