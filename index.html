@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <meta charset="UTF-8">
 <title>Monterchistory</title>
 <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap" rel="stylesheet">
@@ -20,11 +23,17 @@ html, body {
 body { display: flex; flex-direction: column; }
 a { color: #f5f5f5; text-decoration: none; }
 
+/* Rimuove l'highlight su tap nei dispositivi touch */
+a, .title, .gallery img {
+  -webkit-tap-highlight-color: transparent;
+}
+
 /* =====================
    HOMEPAGE STYLES
 ===================== */
 .home {
   height: 100vh;
+  padding: 40px 5vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -88,7 +97,7 @@ a { color: #f5f5f5; text-decoration: none; }
    CONTACT LINK STYLES
 ===================== */
 .contact-link {
-  color: #0000EE; /* blu per link */
+  color: #0000EE; /* classico blu dei link */
   text-decoration: underline;
 }
 
@@ -127,6 +136,85 @@ a { color: #f5f5f5; text-decoration: none; }
   transition: opacity 1s ease;
   opacity: 0;
 }
+
+/* =====================
+   MOBILE STYLES
+===================== */
+@media (max-width: 768px) {
+
+  /* HOME */
+  .sovra-logo {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 15px;
+  }
+
+  .logo {
+    width: 160px;
+    height: 160px;
+    margin-bottom: 25px;
+  }
+
+  .links a,
+  .links span {
+    font-size: 1.8rem;
+  }
+
+  /* PAGES */
+  .page {
+    padding: 60px 6vw;
+  }
+
+  .title {
+    font-size: 1.8rem;
+    gap: 10px;
+  }
+
+  .title img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 0.9rem;
+  }
+
+  .content {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  /* GALLERY */
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  .gallery img {
+    height: 100px;
+  }
+
+  /* LIGHTBOX */
+  .lightbox img {
+    max-width: 92%;
+    max-height: 55vh;
+  }
+
+  .arrow {
+    font-size: 2.2rem;
+  }
+
+  .arrow.left { left: 15px; }
+  .arrow.right { right: 15px; }
+
+  .close {
+    top: 15px;
+    right: 20px;
+    font-size: 1.6rem;
+  }
+}
+
 
 </style>
 </head>
@@ -336,4 +424,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
-
